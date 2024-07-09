@@ -1,6 +1,5 @@
 const mongoose=require("mongoose")
-
- mongoose.connect("mongodb+srv://admin:LNYWJbpIMxSsA6GT@cluster0.pmnc8hb.mongodb.net/paytm")
+// connect to mongoose url by compas or with their official website
 
  const User=new mongoose.Schema({
     username: {
