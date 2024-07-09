@@ -9,13 +9,8 @@ export const Users = () => {
      useEffect(()=>{
           axios.get("http://localhost:3000/api/v1/user/bulk")
                 .then(res=>{
-                    console.log("Response data:",res.data.users);
-                    if(Array.isArray(res.data.users)){
-                    setUsers(res.data.users)
-                    }else{
-                            console.error("Unexpected response format:", res.data);
-                    }
-                })
+                       setUsers(res.data.users)  
+                 })
      },[])
 
     return <>
@@ -26,7 +21,7 @@ export const Users = () => {
             <input type="text" placeholder="Search users..." className="w-full px-2 py-1 border rounded border-slate-200"></input>
         </div>
         <div>
-            {Users.map(user => <User user={user} />)}
+            {Users.map(user => <User user={user}  />)}
         </div>
     </>
 }
