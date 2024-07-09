@@ -10,12 +10,10 @@ export const Users = () => {
           axios.get("http://localhost:3000/api/v1/user/bulk")
                 .then(res=>{
                     console.log("Response data:",res.data.users);
-                    console.log(typeof(res.data.users));
-                   const a= console.log(Object.entries(res.data.users));
-                    if(Array.isArray(a)){
-                    setUsers(res.data.user)
+                    if(Array.isArray(res.data.users)){
+                    setUsers(res.data.users)
                     }else{
-                        console.error("Unexpected response format:", res.data);
+                            console.error("Unexpected response format:", res.data);
                     }
                 })
      },[])
